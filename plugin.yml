@@ -1,0 +1,14 @@
+name: InkPack
+main: com.iopact.InkPack.InkPackPlugin
+version: 0.0.1
+
+commands:
+   inkpack:
+      description: Tries to find inkpacks that went off in the current chunk, or by id id you add an id to the end
+      usage: /<command>
+   applyink:
+      description: Adds Inked lore to the object you are holding. There should be perms added to this
+      usage: /<command>
+   inkpackcreate:
+      description: Adds InkPack lore to the object you are holding to make it an InkPack. This should have perms and should only be used on ink sacs.
+      usage: /<command>
