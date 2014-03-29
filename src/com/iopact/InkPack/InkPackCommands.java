@@ -48,6 +48,7 @@ public class InkPackCommands implements CommandExecutor {
 		 lore.add("InkPack");
 		 meta.setLore(lore);
 		 item.setItemMeta(meta);
+		 sender.sendMessage("Successfully Created InkPack!");
 		 return true;
 	 }
 	 

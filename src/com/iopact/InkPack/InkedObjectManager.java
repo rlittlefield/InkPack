@@ -66,6 +66,7 @@ public class InkedObjectManager implements Listener {
 						InkPackPlugin.getInstance().getLogger().info("Spilling ink everywhere!");
 						ItemStack stack = it.next();
 						Location loc = player.getLocation();
+						holder.getInventory().remove(inklocation);
 						inkedObjects.inkItemStack(stack, loc);
 					}
 					break;
@@ -107,6 +108,7 @@ public class InkedObjectManager implements Listener {
 						InkPackPlugin.getInstance().getLogger().info("Spilling ink everywhere!");
 						ItemStack stack = it.next();
 						Location loc = block.getLocation();
+						holder.getInventory().remove(inklocation);
 						inkedObjects.inkItemStack(stack, loc);
 					}
 					break;
