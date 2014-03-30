@@ -21,11 +21,21 @@ public class InkPackCommands implements CommandExecutor {
 	 
 	 public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		 if (label.equalsIgnoreCase("inkpack")) {
-			 return locateInkPack((Player) sender, args);
+			 	if(sender.hasPermission("inkpack.normal.inkpack")){
+			 		return locateInkPack((Player) sender, args);
+			 		}else {sender.sendMessage("You Do not have Permissions inkpack.normal.inkpack");}
 		 } else if (label.equalsIgnoreCase("applyink")) {
-			 return applyInk((Player) sender, args);
+		 		if(sender.hasPermission("inkpack.applyink")){
+		 			return applyInk((Player) sender, args);
+		 		}else {sender.sendMessage("You Do not have Permissions inkpack.applyink");}
 		 } else if (label.equalsIgnoreCase("inkpackcreate")) {
-			 return createInkPack((Player) sender, args);
+			 	if(sender.hasPermission("inkpack.createinkpack")){
+			 		return createInkPack((Player) sender, args);
+			 	}else {sender.sendMessage("You Do not have Permissions inkpack.normal.inkpackcreate");}
+		 } else if (label.equalsIgnoreCase("inkpackclean")) {
+			 	if(sender.hasPermission("inkpack.inkpackclean")){
+			 		return cleanInkPack((Player) sender, args);
+			 	}else {sender.sendMessage("You Do not have Permissions inkpack.normal.inkpackclean");}
 		 }
 		 return false;
 	 }
@@ -52,6 +62,27 @@ public class InkPackCommands implements CommandExecutor {
 		 return true;
 	 }
 	 
+	 private boolean cleanInkPack(Player sender, String[] args) {
+		 ItemStack item = sender.getItemInHand();
+		 ItemMeta meta = item.getItemMeta();
+		 if (meta == null) {
+			sender.sendMessage("Can't remove lore, no item meta found!");
+			return false;
+		 }
+		 List<String> lore = meta.getLore();
+		 if(lore == null)
+		 {
+			 sender.sendMessage("No Lore on this item!");
+			 return false;
+		 }
+		 meta.setLore(null);
+		 item.setItemMeta(meta);
+		 sender.sendMessage("Successfully Cleaned InkPack!");
+		 return true;
+
+	 }
+	 
+
 	 private boolean locateInkPack(Player sender, String[] args) {
 		 InkedObject item;
 		 if (args.length > 0) {
