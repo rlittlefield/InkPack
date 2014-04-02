@@ -23,6 +23,7 @@ public class InkPackPlugin extends JavaPlugin implements Listener {
 		getCommand("inkpack").setExecutor(commands);
 		getCommand("applyink").setExecutor(commands);
 		getCommand("inkpackcreate").setExecutor(commands);
+		getCommand("inkpackclean").setExecutor(commands);
 		log.info("Started InkPack!");
 		this.inkedObjectManager = new InkedObjectManager(this, inkedObjects);
 		

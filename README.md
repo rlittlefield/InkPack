@@ -15,9 +15,9 @@ How to get it working:
 
 TODO:
 
-1. Permissions to prevent everyone from getting the fancy commands.
+1. ~~Permissions to prevent everyone from getting the fancy commands.~~
 2. Some properly configurable way to add the "InkPack" lore to the ink sac. (Look into FactoryMod for this)
-3. Add some way to remove the Inked lore (an /inkpackclean command)
+3. ~~Add some way to remove the Inked lore (an /inkpackclean command)~~
 4. Add an expiration on the ink that will cause it to self-clean when next moved
 5. /inkpack command range limit
 6. Saving/loading into a text file so things work between server loads.

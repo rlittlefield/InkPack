@@ -1,6 +1,6 @@
 name: InkPack
 main: com.iopact.InkPack.InkPackPlugin
-version: 0.0.1
+version: 0.0.2
 
 commands:
    inkpack:
@@ -12,3 +12,26 @@ commands:
    inkpackcreate:
       description: Adds InkPack lore to the object you are holding to make it an InkPack. This should have perms and should only be used on ink sacs.
       usage: /<command>
+   inkpackclean:
+      description: Removes InkPack lore from the object you are holding to make it an InkPack. This should have perms and should only be used on ink sacs.
+      usage: /<command>
+permissions:
+    inkpack.normal.inkpack:
+      description: Gives access to the inkpack command
+      default: true
+    inkpack.applyink:
+      escription: Gives access to the inkpack command.
+      default: false
+    inkpack.inkpackcreate:
+      description: Gives access to the inkpack command.
+      default: false
+    inkpack.inkpackclean:
+      description: Gives access to the inkpack command.
+      default: false
+    inkpack.normal.opcmds:
+      description: Gives access to the OP commands of InkPack
+      default: op
+      children:
+        inkpack.applyink: true
+        inkpack.inkpackcreate: true
+        inkpack.inkpackclean: true

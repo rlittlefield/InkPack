@@ -1,10 +1,11 @@
 package com.iopact.InkPack;
 
+
+
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.entity.Item;
-
 
 import org.bukkit.block.BrewingStand;
 import org.bukkit.block.Chest;
@@ -12,7 +13,6 @@ import org.bukkit.block.Dispenser;
 import org.bukkit.block.DoubleChest;
 import org.bukkit.block.Furnace;
 import org.bukkit.block.Block;
-
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.Chunk;
@@ -41,17 +41,18 @@ public class InkedObject {
 	
 	public String getLocationDescriptionString() {
 		String typePrefix = "";
+		String world = "";
 		if (holderType == "player") {
 			typePrefix = "Player:";
 			Player holderPlayer = Bukkit.getPlayer(holder);
 			if (holderPlayer != null) {
+				Bukkit.getWorld(world);
 				Location loc = holderPlayer.getLocation();
 				currentLocation = ((int)loc.getX()) + " " + ((int)loc.getY()) + " " + ((int)loc.getZ());;
 			}
 		}
-		return id + ", [" + currentLocation + "] " + typePrefix + holder; 
+		return id + ", [" + currentLocation + "] " + typePrefix + holder + "in world [" + world + "]"; 
 	}
-	
 	
 	
 	public void updateHolder(InventoryHolder current_holder) {
